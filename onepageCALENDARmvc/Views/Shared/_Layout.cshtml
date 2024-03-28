@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /> <!--"user-scalable=no" prohibits users on mobile form zooming(may change later) -->
+    <title>@ViewData["Title"] - onepageCALENDARmvc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/onepageCALENDARmvc.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header class="m-5"> <!--creates the little gap at the top of the page before the h1 element-->
+        <div class="container headerStyle">
+            <h1>OnePage  ->  Calendar</h1>
+        </div>
+
+    </header>
+    <div class="body container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - onepageCALENDARmvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

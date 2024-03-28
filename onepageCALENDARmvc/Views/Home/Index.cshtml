@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="~/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="~/js/froala_editor.pkgd.min.js"></script>
+
+
+<div class="row">
+    <!-- -->
+    <div class="col">
+
+
+        <div class="crudArea">
+
+            <div class="crudLayer1" id="crudLayer1">
+                <div class="MarginBasedOnWindowSize row">
+                    <!--add and searchh -->
+                    <div class="col"> <!--add button -->
+                        <button id="AddNewButton" onclick="Nav2Layer2()" type="submit" class="btn btn-primary">Add New</button>
+                    </div>
+                    <div class="col"> <!--search bar -->
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                </div>
+                <div class=" MarginBasedOnWindowSize row">
+                    <!--Time of Day Greeting -->
+                    <div class="backgroundForDepthYellow col ">
+                        <p class="CenterText greetingMessage" id="GreetingMessage"></p>
+                    </div>
+                   
+                </div>
+                <div class="MarginBasedOnWindowSize row">
+                            <!--Current Info -->
+                            <!--date + time -->
+                    <div class="CenterText quickDate col text-decoration-underline" id="QuickDate"></div>
+                    <div class="CenterText quickTime col text-decoration-underline" id="QuickTime"></div>
+
+                    <div class="MarginBasedOnWindowSize row">
+                        <!--todays calendar items -->
+                        <div class="col">
+                           <table class="table">
+                               <thead>
+                                    <tr>
+                                      <th>Upcoming Today</th>
+                                   </tr>
+                               </thead>
+                           </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crudLayer2" id="crudLayer2">
+                <div class="">
+                    <div class="MarginBasedOnWindowSize row">
+                        <!--add and searchh -->
+                        <div class="col">
+                            <!--Home button -->
+                            <button id="HomeButton" onclick="Nav2Layer1()" type="submit" class="btn btn-primary">Home</button>
+                        </div>
+                        <div class="col">
+                            <!--search bar -->
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                    <div class="MarginBasedOnWindowSize row">
+                        <!--Add Layer Title -->
+                        <div class="backgroundForDepthOrange col">
+                            <p class="addLayerTitle">New Entry?</p>
+                        </div>
+                        <!--date info -->
+                        <div class="backgroundForDepth col">
+                            <div class="quickDate col" id="QuickDateLayer2"></div>
+                        </div>
+
+                    </div>
+                    <div class="MarginBasedOnWindowSize row">
+                        <!--The Form area for add calendar entry-->
+                        <div class="col">
+                            <form class="row" method="post" action="add">
+                                @model onepageCALENDARmvc.Models.AddCalendarEntryViewModel
+                                <div class="row">
+                                    <label for="" class="BoldText CenterText form-label">Event Type:</label>
+                                    <div class=" CenterText col">
+
+                                        @Html.EditorFor(m => m.TypeOfEvent, "TypeOfEvent")
+                                    </div>
+                                </div>
+                                <div class="MarginBasedOnWindowSize col">
+                                    <div class="row">
+                                        <div class="CenterText col">
+                                            <label for="" class=" BoldText">Title</label>
+                                            <input type="text" class="form-control" asp-for="Title" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="MarginBasedOnWindowSize col">
+                                    <div class="row">
+                                        <div class="CenterText col">
+                                            <label for="" class=" BoldText">Date</label>
+                                            <input type="date" class="form-control" asp-for="Date" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="MarginBasedOnWindowSize row">
+                                    <div class="CenterText col">
+                                        <button type="submit" class="btn btn-primary makeLongButton">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+            <div class="crudLayer3" id="crudLayer3">
+
+            </div>
+
+           
+        </div>
+           
+        
+
+        <div id="myEditor" class="noteArea">
+
+
+                    <script>
+                        var editor = new FroalaEditor('#myEditor');
+                    </script>
+                   
+        </div>
+
+
+    </div>
+
+    <div class="calendarArea col">
+
+        <!--Put "calendar" here for grey outline-->
+        <!--This one is more tricky, I need to fill this with a calendar that is going to -->
+
+    </div>
+
+</div>
+

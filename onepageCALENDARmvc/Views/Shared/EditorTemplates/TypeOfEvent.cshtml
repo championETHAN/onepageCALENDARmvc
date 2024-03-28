@@ -1,0 +1,20 @@
+﻿@model Enum
+@foreach (var value in Enum.GetValues(typeof(onepageCALENDARmvc.Models.EventType)))
+{
+
+    <div class="form-check form-check-inline">
+
+        <div class="row">
+            <div class="col">
+
+                <div class="row">
+                    @Html.RadioButtonFor(m => m, value)
+                    
+                </div>
+                @Html.Label(value.ToString())
+            </div>
+        </div>
+
+    </div>
+
+}
