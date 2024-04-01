@@ -132,13 +132,20 @@ div.crudLayer3 {
     height: 48vh;
     position: absolute;
     overflow: auto;
+
+}
+div.roundCorner {
+    border-top-right-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
 }
 
 /*-------------------------------------------------------------CSS For The Calendar Window-------------------------------------------------------------*/
 div.calendarArea {
     outline: 5px solid grey;
     background-color: grey;
-    opacity: 0.2;
+    opacity: 0.5;
 
     width: 40vw;
     height: 70vh;

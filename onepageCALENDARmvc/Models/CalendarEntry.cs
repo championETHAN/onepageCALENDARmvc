@@ -1,4 +1,5 @@
-﻿namespace onepageCALENDARmvc.Models
+﻿
+namespace onepageCALENDARmvc.Models
 {
     public class CalendarEntry
     {
@@ -8,5 +9,8 @@
         public DateTime Date { get; set; }
 
         public EventType TypeOfEvent { get; set; }
+
+
     }
+
 }
