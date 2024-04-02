@@ -34,4 +34,16 @@ function Nav2Layer2( ) {
 function Nav2Layer1() {
     var HomePage = document.getElementById("crudLayer2");
     HomePage.classList.toggle("show");
+
+
+}
+function Nav2Layer3() {
+    var SearchPage = document.getElementById("crudLayer3");
+    SearchPage.classList.toggle("show");
+
+}
+function Nav2Home() {
+    var Nav2HomePage = document.getElementById("crudLayer3");
+    Nav2HomePage.classList.toggle("show");
+
 }

@@ -1,9 +1,5 @@
-﻿
-namespace onepageCALENDARmvc.Models
+﻿namespace onepageCALENDARmvc.Models
 {
-    public class IndexPageViewModel
 
-    {
-
-    }
+   
 }

@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.DataProtection.KeyManagement.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using onepageCALENDARmvc.Data;
 using onepageCALENDARmvc.Models;
 using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
 using System.Reflection;
 
 namespace onepageCALENDARmvc.Controllers
@@ -15,18 +18,27 @@ namespace onepageCALENDARmvc.Controllers
             this.dbContext = dbContext;
 
         }
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var _calendar = await dbContext.CalendarEntrys.ToListAsync();
+            var todaysDate = DateTime.Today;
+            var _calendar = await dbContext.CalendarEntrys.Where(x => x.Date == todaysDate).ToListAsync();
+            ViewBag.calendar = _calendar;
+            //This is for crudLayer1 aka Todays Calendar Entrys
+            var _Fullcalendar = await dbContext.CalendarEntrys.ToListAsync();
+            ViewBag.Fullcalendar = _Fullcalendar;
+            //This is for crudlayer3 aka full list of calendarEntrys
+
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(AddCalendarEntryViewModel addCalendarEntryRequest)
         {
-            var calendarEntry = new CalendarEntry
-            {
+            var calendarEntry = new CalendarEntry()
+            { 
+                
                 Id = Guid.NewGuid(),
                 Title = addCalendarEntryRequest.Title,
                 Date = addCalendarEntryRequest.Date,

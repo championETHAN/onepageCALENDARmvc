@@ -1,5 +1,4 @@
-﻿
-namespace onepageCALENDARmvc.Models
+﻿namespace onepageCALENDARmvc.Models
 {
     public class AddCalendarEntryViewModel
     {
@@ -10,4 +9,3 @@ namespace onepageCALENDARmvc.Models
 
     }
 }
-

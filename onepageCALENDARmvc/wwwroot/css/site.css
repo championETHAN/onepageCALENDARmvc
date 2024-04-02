@@ -52,6 +52,20 @@ div.crudArea {
     position: relative;
     z-index: 0;
 }
+.SearchBarContainer {
+
+}
+.SearchBarPlacement {
+    padding: 0vw;
+
+}
+.SearchBarLength {
+    width: 15vw;
+}
+.SearchBarButtonPlacement {
+    padding: 0vw;
+    margin-left: 1vw;
+}
 .MarginBasedOnWindowSize { /*20 percentish*/
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -125,14 +139,17 @@ div.crudLayer2 {
 
 /*---CSS For The CRUD Window Default View (Layer 3)-----*/
 div.crudLayer3 {
-    outline: 5px solid blue;
-    background-color: blue;
+    outline: 5px solid green;
+    background-color: green;
     opacity: 1;
     width: 60vw;
     height: 48vh;
     position: absolute;
     overflow: auto;
 
+}
+.TextColor {
+    color: antiquewhite;
 }
 div.roundCorner {
     border-top-right-radius: 2vh;
