@@ -6,6 +6,6 @@
 
         public DateTime Date { get; set; }
         public EventType TypeOfEvent { get; set; }
-
+        //woah
     }
 }
